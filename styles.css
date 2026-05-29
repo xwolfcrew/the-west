@@ -42,6 +42,7 @@ img {
 .nav-wrapper a {
   text-decoration: none;
   text-transform: uppercase;
+  font-size: clamp(0.5rem, 1rem, 1vw);
   font-weight: 600;
   letter-spacing: 0;
   color: rgba(0, 0, 0, 0.2);
@@ -130,8 +131,8 @@ img {
 
 .section-1-interior .image-container {
   position: relative;
-  width: 500px;
-  height: 700px;
+  width: min(500px, 85vw);
+  height: min(700px, 60vh);
   overflow: hidden;
   transform-origin: center center;
 }
@@ -160,14 +161,17 @@ img {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
   align-items: center;
   justify-content: center;
+  padding: 0 6rem;
 }
 
 .text-left {
-  position: absolute;
-  top: 44%;
-  left: 20%;
+  position: relative;
+  top: unset;
+  left: unset;
+  width: 100%;
 }
 
 .text-left h1 {
@@ -178,9 +182,10 @@ img {
 }
 
 .text-right {
-  position: absolute;
-  top: 52%;
-  left: 20%;
+  position: relative;
+  top: unset;
+  left: unset;
+  width: 100%;
 }
 
 .text-right h1 {
@@ -190,19 +195,14 @@ img {
   transform-origin: left;
 }
 
-
 @media (max-width: 1000px) {
-    .text-left {
-        top: 45%;
-        left: calc(50vw - 250px);
-    }
+  .text-left {
+    top: 45%;
+    left: calc(50vw - 250px);
+  }
 
-   
-
-    .text-right {
-        top: 48%;
-        left: calc(50vw - 250px);
-    }
-
-
+  .text-right {
+    top: 48%;
+    left: calc(50vw - 250px);
+  }
 }

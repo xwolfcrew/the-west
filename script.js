@@ -19,11 +19,17 @@ gsap.ticker.add((time) => {
 // Disable lag smoothing in GSAP to prevent any delay in scroll animations
 gsap.ticker.lagSmoothing(0);
 
+ScrollTrigger.normalizeScroll(true);
+
+window.addEventListener("load", () => {
+  ScrollTrigger.refresh();
+});
+
 const tl1 = gsap.timeline({
   scrollTrigger: {
     trigger: ".section-1",
     start: "top top",
-    end: "=+3000",
+    end: () => `+=${window.innerHeight * 2.5}`,
     scrub: 1,
     pin: ".section-1-interior",
   },
